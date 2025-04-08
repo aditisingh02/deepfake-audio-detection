@@ -69,7 +69,7 @@ pip install -r requirements.txt
 
 3. Download the dataset and follow the file structure
 
-### Training New Models
+### Training the Model
 
 To train a new model on your dataset:
 
