@@ -1,6 +1,6 @@
-# Momenta - Audio Deepfake Detection
+# Audio Deepfake Detection
 
-Momenta is a deep learning project designed to detect deepfake audio content by analyzing various audio characteristics and features. The system uses a convolutional neural network (CNN) to distinguish between authentic and synthetically generated voice recordings.
+This is a deep learning project designed to detect deepfake audio content by analyzing various audio characteristics and features. The system uses a convolutional neural network (CNN) to distinguish between authentic and synthetically generated voice recordings.
 
 ## Dataset
 
