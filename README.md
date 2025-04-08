@@ -2,6 +2,14 @@
 
 Momenta is a deep learning project designed to detect deepfake audio content by analyzing various audio characteristics and features. The system uses a convolutional neural network (CNN) to distinguish between authentic and synthetically generated voice recordings.
 
+## Dataset
+
+The project uses the Deep Voice Deepfake Voice Recognition dataset from Kaggle:
+
+- Dataset Link: [Deep Voice Deepfake Voice Recognition](https://www.kaggle.com/datasets/birdy654/deep-voice-deepfake-voice-recognition/data)
+- Contains real and synthetic voice samples
+- Used for training and testing the model
+
 ## Features
 
 - Real-time audio deepfake detection
@@ -21,11 +29,11 @@ The project uses a structured dataset organized as follows:
 ```
 data/
 ├── AUDIO/
-│   ├── REAL/          
-│   │   └── *.wav     
-│   └── FAKE/          
-│       └── *.wav      
-└── DATASET-balanced.csv   
+│   ├── REAL/          # Original voice recordings
+│   │   └── *.wav      # Real audio samples
+│   └── FAKE/          # Synthetic voice recordings
+│       └── *.wav      # Generated audio samples
+└── DATASET-balanced.csv   # Metadata and labels
 ```
 
 ## Requirements
@@ -43,14 +51,14 @@ data/
 
 1. Clone the repository:
 
+
+### HTML
 ```bash
-HTML
 git clone https://github.com/aditisingh02/Momenta.git
-
-SSH
+```
+### SSH
+```bash
 git@github.com:aditisingh02/deepfake-audio-detection.git
-
-cd Momenta
 ```
 
 2. Install required packages:
@@ -58,6 +66,8 @@ cd Momenta
 ```bash
 pip install -r requirements.txt
 ```
+
+3. Download the dataset and follow the file structure
 
 ## Usage
 
@@ -104,23 +114,15 @@ The CNN model architecture includes:
 
 The model achieves:
 
-- High accuracy in distinguishing real from fake audio
-- Fast inference time
-- Robust feature extraction
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+- Test Accuracy: ~90.91% (based on validation results)
+- AUC Score: High discriminative ability between real and fake audio
+- Fast inference time (typically under 1 second per audio sample)
+- Robust feature extraction with multiple audio characteristics:
+  - Mel spectrograms
+  - MFCCs
+  - Spectral rolloff
+  - Zero crossing rate
 
 ## Acknowledgments
 
-- Voice samples from various public sources
-- Deep learning architecture inspired by state-of-the-art audio processing techniques
+- Voice samples from [Deep Voice Deepfake Voice Recognition](https://www.kaggle.com/datasets/birdy654/deep-voice-deepfake-voice-recognition/data)
