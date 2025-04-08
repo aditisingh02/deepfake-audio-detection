@@ -1,0 +1,21 @@
+# Audio files
+data/AUDIO/**/*.wav
+
+# Model files
+*.h5
+
+# Training history
+*.png
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db 
