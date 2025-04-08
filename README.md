@@ -69,6 +69,14 @@ pip install -r requirements.txt
 
 3. Download the dataset and follow the file structure
 
+### Training New Models
+
+To train a new model on your dataset:
+
+```bash
+python train_model_v2.py
+```
+
 ## Usage
 
 ### Testing Audio Files
@@ -83,14 +91,6 @@ Example:
 
 ```bash
 python test_model.py --model best_model_v2.h5 --audio "data/AUDIO/REAL/biden-original.wav"
-```
-
-### Training New Models
-
-To train a new model on your dataset:
-
-```bash
-python train_model_v2.py
 ```
 
 The training script includes:
