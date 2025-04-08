@@ -21,11 +21,11 @@ The project uses a structured dataset organized as follows:
 ```
 data/
 ├── AUDIO/
-│   ├── REAL/          # Original voice recordings
-│   │   └── *.wav      # Real audio samples
-│   └── FAKE/          # Synthetic voice recordings
-│       └── *.wav      # Generated audio samples
-└── DATASET-balanced.csv   # Metadata and labels
+│   ├── REAL/          
+│   │   └── *.wav     
+│   └── FAKE/          
+│       └── *.wav      
+└── DATASET-balanced.csv   
 ```
 
 ## Requirements
