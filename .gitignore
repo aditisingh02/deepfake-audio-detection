@@ -4,9 +4,6 @@ data/AUDIO/**/*.wav
 # Model files
 *.h5
 
-# Training history
-*.png
-
 # Python
 __pycache__/
 *.py[cod]
