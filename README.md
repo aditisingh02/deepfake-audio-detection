@@ -2,6 +2,8 @@
 
 This is a deep learning project designed to detect deepfake audio content by analyzing various audio characteristics and features. The system uses a convolutional neural network (CNN) to distinguish between authentic and synthetically generated voice recordings.
 
+https://github.com/user-attachments/assets/0fb44f11-8717-43f5-81c4-27e68b14df8a
+
 ## Dataset
 
 The project uses the Deep Voice Deepfake Voice Recognition dataset from Kaggle:
@@ -51,12 +53,14 @@ data/
 
 1. Clone the repository:
 
-
 ### HTML
+
 ```bash
 git clone https://github.com/aditisingh02/Momenta.git
 ```
+
 ### SSH
+
 ```bash
 git@github.com:aditisingh02/deepfake-audio-detection.git
 ```
@@ -69,12 +73,33 @@ pip install -r requirements.txt
 
 3. Download the dataset and follow the file structure
 
+## Project Structure
+
+```
+deepfake-audio-detection/
+├── app.py                 # main application
+├── train_model_v2.py      # Model training script
+├── test_model.py          # Model testing script
+├── requirements.txt       # Python dependencies
+├── runtime.txt            # Python dependencies
+├── .streamlit/
+│   └── config.toml       # theme and app settings
+├── deepfake_audio_detector_v2.h5
+└── best_model_v2.h5      # final model
+```
+
 ### Training the Model
 
 To train a new model on your dataset:
 
 ```bash
 python train_model_v2.py
+```
+
+### Run the Application
+
+```bash
+python -m streamlit run app.py
 ```
 
 ## Usage
@@ -92,6 +117,13 @@ Example:
 ```bash
 python test_model.py --model best_model_v2.h5 --audio "data/AUDIO/REAL/biden-original.wav"
 ```
+
+### Running the application
+
+1. Launch the application using `python -m streamlit run app.py`
+2. Upload a WAV audio file using the file uploader
+3. Wait for the analysis to complete
+4. View the detection results, confidence score, and audio visualizations
 
 The training script includes:
 
