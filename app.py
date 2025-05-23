@@ -8,6 +8,7 @@ from PIL import Image
 import io
 import matplotlib.pyplot as plt
 
+# Set page config
 st.set_page_config(
     page_title="Deepfake Audio Detector",
     page_icon=Image.open("public/equalizer.png"),
@@ -15,6 +16,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+# Constants
 SAMPLE_RATE = 22050
 DURATION = 3
 SAMPLES = SAMPLE_RATE * DURATION
@@ -26,12 +28,10 @@ def load_and_preprocess_audio(audio_file):
             tmp_file.write(audio_file.getvalue())
             tmp_path = tmp_file.name
 
-        # Load audio
         audio, sr = librosa.load(tmp_path, sr=SAMPLE_RATE, duration=DURATION)
         if len(audio) < SAMPLES:
             audio = np.pad(audio, (0, SAMPLES - len(audio)))
         
-        # Clean up temporary file
         os.unlink(tmp_path)
         return audio
     except Exception as e:
@@ -96,6 +96,7 @@ def plot_audio_features(audio):
     return fig
 
 def main():
+    # Header
     st.markdown("""
         <h1 style='text-align: center; margin-bottom: 1rem;'>
             Deepfake Audio Detector
@@ -120,7 +121,7 @@ def main():
             features = np.expand_dims(features, axis=(0, -1))
             
             try:
-                model = tf.keras.models.load_model('deepfake_audio_detector_v2.h5')
+                model = tf.keras.models.load_model('best_model_v2.h5')
                 prediction = model.predict(features)[0][0]
                 
                 st.markdown("### Detection Results")
@@ -146,7 +147,7 @@ def main():
 
             st.markdown("### Audio Analysis")
             fig = plot_audio_features(audio)
-            st.pyplot(fig)           
+            st.pyplot(fig)
 
 if __name__ == "__main__":
     main() 
